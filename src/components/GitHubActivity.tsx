@@ -23,20 +23,18 @@ export function GitHubActivity() {
     return buildDynamicWeeks(VERIFIED_CONTRIBUTIONS, STATIC_BASELINE_DATE);
   });
 
-  const [totalContributions, setTotalContributions] = useState(72);
+  const [totalContributions, setTotalContributions] = useState(74);
   const [isLive, setIsLive] = useState(false);
 
   // Live dynamic synchronization with GitHub
   useEffect(() => {
     let mounted = true;
 
-    // Immediately calculate weeks based on the viewer's live current date
-    const clientToday = new Date();
-    setCalendarData(buildDynamicWeeks(VERIFIED_CONTRIBUTIONS, clientToday));
-
     async function fetchLiveContributions() {
       try {
-        const res = await fetch("/api/github-contributions");
+        const res = await fetch(`/api/github-contributions?_t=${Date.now()}`, {
+          cache: "no-store",
+        });
         if (!res.ok) return;
         const data = await res.json();
         if (!mounted || !data.success) return;
@@ -63,27 +61,35 @@ export function GitHubActivity() {
       }
     }
 
+    // Initial fetch
     fetchLiveContributions();
+
+    // Instant re-fetch when user switches back to this tab
+    const onFocus = () => fetchLiveContributions();
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        fetchLiveContributions();
+      }
+    };
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    // Dynamic polling every 45 seconds to keep activity live
+    const interval = setInterval(fetchLiveContributions, 45000);
+
     return () => {
       mounted = false;
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      clearInterval(interval);
     };
   }, []);
 
-  const { weeks } = calendarData;
+  const { weeks, monthLabels } = calendarData;
 
-  // Month labels placed above the week where the month begins
-  const monthOffsets = weeks.map((week, index) => {
-    const firstDayOfMonth = week.find((d) => d.inYear && d.date.endsWith("-01"));
-    if (firstDayOfMonth) {
-      const monthIdx = parseInt(firstDayOfMonth.date.split("-")[1], 10) - 1;
-      return MONTH_NAMES[monthIdx];
-    }
-    if (index === 0) return "Jun";
-    return null;
-  });
-
-  const getCellColorClass = (level: number, inYear: boolean) => {
+  const getCellColorClass = (level: number, inYear: boolean, isFuture?: boolean) => {
     if (!inYear) return "opacity-0 pointer-events-none";
+    if (isFuture) return "bg-transparent border border-dashed border-[var(--hairline)]/30 opacity-30 cursor-default";
     switch (level) {
       case 1:
         return "bg-[#9be9a8] dark:bg-[#0e4429] border border-[#86efac]/80 dark:border-[#006d32]/40";
@@ -150,7 +156,9 @@ export function GitHubActivity() {
           <div className="text-xs font-mono text-[var(--body)] sm:text-right min-h-[1.25rem]">
             {hoveredDay && hoveredDay.inYear ? (
               <span className="text-[var(--ink)] font-medium">
-                {hoveredDay.count === 0 ? "No contributions" : `${hoveredDay.count} contribution${hoveredDay.count > 1 ? "s" : ""}`} on {formatDate(hoveredDay.date)}
+                {hoveredDay.isFuture
+                  ? `Upcoming · ${formatDate(hoveredDay.date)}`
+                  : `${hoveredDay.count === 0 ? "No contributions" : `${hoveredDay.count} contribution${hoveredDay.count > 1 ? "s" : ""}`} on ${formatDate(hoveredDay.date)}`}
               </span>
             ) : (
               <span className="text-[var(--mute)]">Hover or tap on any day to inspect</span>
@@ -163,7 +171,7 @@ export function GitHubActivity() {
           <div className="inline-block min-w-full">
             {/* Month Labels Row */}
             <div className="flex relative h-4 pl-8 mb-2 text-[10px] font-mono text-[var(--mute)] select-none">
-              {monthOffsets.map((month, idx) => (
+              {monthLabels.map((month, idx) => (
                 <div key={idx} className="w-[14px] sm:w-[15.5px] shrink-0 relative">
                   {month && <span className="absolute left-0 top-0 whitespace-nowrap">{month}</span>}
                 </div>
@@ -187,7 +195,9 @@ export function GitHubActivity() {
                   <div key={wIdx} className="flex flex-col gap-[3px] sm:gap-[3.5px]">
                     {week.map((day) => {
                       const tooltip = day.inYear
-                        ? `${day.count === 0 ? "No" : day.count} contribution${day.count === 1 ? "" : "s"} on ${formatDate(day.date)}`
+                        ? day.isFuture
+                          ? `Upcoming on ${formatDate(day.date)}`
+                          : `${day.count === 0 ? "No" : day.count} contribution${day.count === 1 ? "" : "s"} on ${formatDate(day.date)}`
                         : "";
 
                       return (
@@ -197,10 +207,13 @@ export function GitHubActivity() {
                           onMouseEnter={() => setHoveredDay(day)}
                           onMouseLeave={() => setHoveredDay(null)}
                           onClick={() => setHoveredDay(day)}
-                          className={`w-[11px] h-[11px] sm:w-[12px] sm:h-[12px] rounded-[2.5px] transition-all cursor-pointer ${getCellColorClass(
+                          className={`w-[11px] h-[11px] sm:w-[12px] sm:h-[12px] rounded-[2.5px] transition-all ${
+                            day.isFuture ? "cursor-default" : "cursor-pointer"
+                          } ${getCellColorClass(
                             day.level,
-                            day.inYear
-                          )} ${day.inYear ? "hover:scale-130 active:scale-130 hover:z-10" : ""}`}
+                            day.inYear,
+                            day.isFuture
+                          )} ${day.inYear && !day.isFuture ? "hover:scale-130 active:scale-130 hover:z-10" : ""}`}
                         />
                       );
                     })}

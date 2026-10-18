@@ -26,16 +26,52 @@ export const VERIFIED_CONTRIBUTIONS: Record<string, { count: number; level: numb
   "2026-09-03": { count: 1, level: 1 },
   "2026-10-06": { count: 20, level: 3 },
   "2026-10-08": { count: 31, level: 4 },
+  "2026-10-18": { count: 2, level: 2 },
 };
 
-const DEFAULT_ANCHOR_DATE = new Date("2026-10-15T00:00:00Z");
+export interface ContributionDay {
+  date: string;
+  count: number;
+  level: number;
+  inYear: boolean;
+  isFuture?: boolean;
+}
+
+const DEFAULT_ANCHOR_DATE = new Date("2026-10-18T00:00:00Z");
+
+const MONTH_NAMES = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
 
 export function buildDynamicWeeks(
   dayMap: Record<string, { count: number; level: number }> = VERIFIED_CONTRIBUTIONS,
   refDate: Date = DEFAULT_ANCHOR_DATE
-): { weeks: ContributionDay[][]; total2026Count: number } {
-  // Start date: Sunday May 31, 2026
-  const start = new Date(Date.UTC(2026, 4, 31)); // May 31, 2026
+): {
+  weeks: ContributionDay[][];
+  total2026Count: number;
+  monthLabels: (string | null)[];
+} {
+  const currentYear = refDate.getUTCFullYear();
+  let start: Date;
+
+  if (currentYear === 2026) {
+    // Start date: Sunday May 31, 2026 (boundary week for June 1, 2026)
+    start = new Date(Date.UTC(2026, 4, 31));
+  } else {
+    // For future years, show rolling 52 weeks ending on the current week
+    const currentDayOfWeek = refDate.getUTCDay();
+    const daysToSaturday = (6 - currentDayOfWeek + 7) % 7;
+    const endSaturday = new Date(
+      Date.UTC(
+        refDate.getUTCFullYear(),
+        refDate.getUTCMonth(),
+        refDate.getUTCDate() + daysToSaturday
+      )
+    );
+    start = new Date(endSaturday);
+    start.setUTCDate(start.getUTCDate() - (52 * 7 - 1));
+  }
 
   // End date: Saturday of refDate's week
   const currentDayOfWeek = refDate.getUTCDay(); // 0 is Sun, 6 is Sat
@@ -56,7 +92,7 @@ export function buildDynamicWeeks(
   const cur = new Date(start);
   while (cur <= end) {
     const dateStr = cur.toISOString().split("T")[0];
-    const isPaddingBeforeJune = dateStr < "2026-06-01";
+    const isPaddingBeforeJune = currentYear === 2026 && dateStr < "2026-06-01";
     const isFutureDay = dateStr > todayStr;
     const inPeriod = !isPaddingBeforeJune && !isFutureDay;
 
@@ -73,6 +109,7 @@ export function buildDynamicWeeks(
       count,
       level,
       inYear: !isPaddingBeforeJune,
+      isFuture: isFutureDay,
     });
 
     if (currentWeek.length === 7) {
@@ -87,13 +124,28 @@ export function buildDynamicWeeks(
     weeks.push(currentWeek);
   }
 
-  return { weeks, total2026Count };
+  // Dynamic month labels computed directly from week dates
+  let lastMonth = -1;
+  const monthLabels = weeks.map((week) => {
+    for (const day of week) {
+      if (day.inYear) {
+        const m = parseInt(day.date.split("-")[1], 10) - 1;
+        if (m !== lastMonth) {
+          lastMonth = m;
+          return MONTH_NAMES[m];
+        }
+      }
+    }
+    return null;
+  });
+
+  return { weeks, total2026Count, monthLabels };
 }
 
 export const GITHUB_2026_STATS = {
   username: "Chandan-NG",
-  totalContributions: 72,
-  activeDaysCount: 19,
+  totalContributions: 74,
+  activeDaysCount: 20,
   maxDailyStreak: 18,
   period: "Jun 2026 - Present",
   weeks: [
