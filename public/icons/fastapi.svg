@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- FastAPI Official Brand Emblem -->
+  <defs>
+    <linearGradient id="fastapi-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4A0" />
+      <stop offset="100%" stop-color="#009485" />
+    </linearGradient>
+  </defs>
+
+  <!-- Teal Circle Base -->
+  <circle cx="64" cy="64" r="56" fill="url(#fastapi-teal)" />
+
+  <!-- White Lightning Bolt -->
+  <polygon points="68,22 79,22 61,56 79,56 49,106 59,70 40,70" fill="#FFFFFF" />
+</svg>

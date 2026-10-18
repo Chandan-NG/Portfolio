@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Dark stadium night background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070a"/>
+      <stop offset="50%" stop-color="#0c111c"/>
+      <stop offset="100%" stop-color="#05070a"/>
+    </linearGradient>
+
+    <!-- Stadium floodlight glow -->
+    <radialGradient id="lightGlow1" cx="30%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lightGlow2" cx="70%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Halftone / crowd dots pattern -->
+    <pattern id="stadiumCrowd" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="4" r="1.2" fill="#ffffff" opacity="0.15"/>
+      <circle cx="12" cy="14" r="0.8" fill="#38bdf8" opacity="0.25"/>
+      <circle cx="18" cy="8" r="1" fill="#f59e0b" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="1200" height="360" fill="url(#bgGrad)"/>
+
+  <!-- Light glows -->
+  <rect width="1200" height="360" fill="url(#lightGlow1)"/>
+  <rect width="1200" height="360" fill="url(#lightGlow2)"/>
+  <rect width="1200" height="360" fill="url(#centerGlow)"/>
+
+  <!-- Crowd noise simulation -->
+  <rect y="160" width="1200" height="200" fill="url(#stadiumCrowd)"/>
+
+  <!-- Stadium upper floodlights towers -->
+  <g opacity="0.6">
+    <polygon points="120,40 180,40 160,140 140,140" fill="#1e293b"/>
+    <circle cx="130" cy="45" r="5" fill="#f8fafc"/>
+    <circle cx="150" cy="45" r="5" fill="#f8fafc"/>
+    <circle cx="170" cy="45" r="5" fill="#f8fafc"/>
+
+    <polygon points="1020,40 1080,40 1060,140 1040,140" fill="#1e293b"/>
+    <circle cx="1030" cy="45" r="5" fill="#f8fafc"/>
+    <circle cx="1050" cy="45" r="5" fill="#f8fafc"/>
+    <circle cx="1070" cy="45" r="5" fill="#f8fafc"/>
+  </g>
+
+  <!-- Stadium Ribbon LED board -->
+  <rect x="0" y="240" width="1200" height="22" fill="#0f172a" opacity="0.9"/>
+  <text x="60" y="255" fill="#38bdf8" font-family="monospace" font-size="11" letter-spacing="4" opacity="0.8">CHANDAN N G • FULL STACK &amp; AI SYSTEMS • BENGALURU • INDIA</text>
+  <text x="760" y="255" fill="#f59e0b" font-family="monospace" font-size="11" letter-spacing="4" opacity="0.8">AGENTIC RAG • NEXT.JS • PYTHON • LANGGRAPH</text>
+
+  <!-- Main Headline Typography "GOD'S PLAN." with 18 jersey motif -->
+  <g transform="translate(600, 185)" text-anchor="middle">
+    <!-- Jersey Silhouette Outline -->
+    <path d="M-60,-50 L-30,-70 L30,-70 L60,-50 L45,40 L-45,40 Z" fill="#1d4ed8" opacity="0.85" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Jersey Number 18 -->
+    <text y="-8" fill="#ffffff" font-family="Impact, sans-serif" font-size="52" font-weight="bold" letter-spacing="2">18</text>
+
+    <!-- Bold Backdrop Text "GOD'S PLAN." -->
+    <text x="0" y="20" fill="#ffffff" font-family="Impact, Arial Black, sans-serif" font-size="78" font-weight="900" letter-spacing="4" opacity="0.95">
+      GOD&apos;S PLAN.
+    </text>
+  </g>
+
+  <!-- Bottom subtle gradient blend -->
+  <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
+  </linearGradient>
+  <rect y="280" width="1200" height="80" fill="url(#bottomFade)"/>
+</svg>

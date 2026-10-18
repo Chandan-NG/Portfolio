@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- TensorFlow 3D Isometric Logo -->
+  <!-- Top Left Wing -->
+  <polygon points="64,8 14,37 14,95 38,81 38,51 64,66" fill="#FF6F00" />
+  <!-- Top Right Wing -->
+  <polygon points="64,8 114,37 114,95 90,81 90,51 64,66" fill="#FFA800" />
+  <!-- Center Column Left -->
+  <polygon points="46,74 64,84 64,120 46,110" fill="#E65100" />
+  <!-- Center Column Right -->
+  <polygon points="64,84 82,74 82,110 64,120" fill="#FF8F00" />
+  <!-- Top Center Cap Accent -->
+  <polygon points="64,8 38,23 64,38 90,23" fill="#FFB300" opacity="0.6" />
+</svg>

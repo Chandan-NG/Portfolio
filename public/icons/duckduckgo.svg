@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- DuckDuckGo Official Brand Logo -->
+  <circle cx="64" cy="64" r="58" fill="#DE5833" />
+  
+  <!-- Duck Silhouette / Head -->
+  <path d="M64 22 C46 22 36 36 36 52 C36 68 46 80 64 80 C82 80 92 68 92 52 C92 36 82 22 64 22 Z" fill="#FFFFFF" />
+  
+  <!-- Duck Bill -->
+  <path d="M48 54 C48 50 80 50 80 54 C80 64 48 64 48 54 Z" fill="#F8A72B" />
+  <ellipse cx="64" cy="58" rx="14" ry="7" fill="#F8A72B" />
+  <path d="M52 56 Q64 61 76 56" stroke="#D98216" stroke-width="2" fill="none" />
+
+  <!-- Left Eye -->
+  <circle cx="52" cy="42" r="5" fill="#222222" />
+  <circle cx="53.5" cy="40.5" r="1.8" fill="#FFFFFF" />
+
+  <!-- Right Eye -->
+  <circle cx="76" cy="42" r="5" fill="#222222" />
+  <circle cx="77.5" cy="40.5" r="1.8" fill="#FFFFFF" />
+
+  <!-- Green Bowtie -->
+  <polygon points="50,84 64,91 50,98" fill="#5B9E4D" />
+  <polygon points="78,84 64,91 78,98" fill="#5B9E4D" />
+  <circle cx="64" cy="91" r="4.5" fill="#448139" />
+</svg>

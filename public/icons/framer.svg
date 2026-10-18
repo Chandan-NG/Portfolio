@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Framer / Framer Motion Official Brand Geometric Logo -->
+  <defs>
+    <linearGradient id="framer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0055FF" />
+      <stop offset="50%" stop-color="#7000FF" />
+      <stop offset="100%" stop-color="#FF0055" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top Right Triangle -->
+  <polygon points="20,8 108,8 64,52" fill="#0055FF" />
+  <!-- Center Trapezoid -->
+  <polygon points="20,8 64,52 20,52" fill="#0040CC" />
+  <polygon points="20,52 64,52 108,96 20,96" fill="url(#framer-grad)" />
+  <!-- Bottom Left Triangle -->
+  <polygon points="20,96 64,96 20,128" fill="#FF0055" />
+</svg>

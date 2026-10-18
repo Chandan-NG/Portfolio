@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- ChromaDB Official Colorful Vector Database Matrix -->
+  <!-- Top Row -->
+  <rect x="7" y="11" width="9" height="9" rx="3" fill="#FF5C5C" />
+  <rect x="19.5" y="11" width="9" height="9" rx="3" fill="#FFA534" />
+  <rect x="32" y="11" width="9" height="9" rx="3" fill="#FFD13B" />
+  
+  <!-- Bottom Row -->
+  <rect x="7" y="27" width="9" height="9" rx="3" fill="#2ED8A2" />
+  <rect x="19.5" y="27" width="9" height="9" rx="3" fill="#3B82F6" />
+  <rect x="32" y="27" width="9" height="9" rx="3" fill="#8B5CF6" />
+</svg>

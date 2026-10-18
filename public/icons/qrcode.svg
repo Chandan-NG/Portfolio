@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- QR Code Authentic Matrix Badge -->
+  <rect width="128" height="128" rx="28" fill="#0284C7" opacity="0.12" />
+  
+  <!-- Top Left Finder Pattern -->
+  <rect x="22" y="22" width="30" height="30" rx="4" stroke="#0284C7" stroke-width="6" fill="none" />
+  <rect x="31" y="31" width="12" height="12" rx="2" fill="#0284C7" />
+
+  <!-- Top Right Finder Pattern -->
+  <rect x="76" y="22" width="30" height="30" rx="4" stroke="#0284C7" stroke-width="6" fill="none" />
+  <rect x="85" y="31" width="12" height="12" rx="2" fill="#0284C7" />
+
+  <!-- Bottom Left Finder Pattern -->
+  <rect x="22" y="76" width="30" height="30" rx="4" stroke="#0284C7" stroke-width="6" fill="none" />
+  <rect x="31" y="85" width="12" height="12" rx="2" fill="#0284C7" />
+
+  <!-- Data Matrix Pixels -->
+  <rect x="60" y="22" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="60" y="44" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="22" y="60" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="44" y="60" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="60" y="60" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="76" y="60" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="98" y="60" width="8" height="8" rx="1.5" fill="#0284C7" />
+
+  <rect x="60" y="76" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="76" y="76" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="98" y="76" width="8" height="8" rx="1.5" fill="#0284C7" />
+
+  <rect x="60" y="98" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="85" y="98" width="8" height="8" rx="1.5" fill="#0284C7" />
+  <rect x="98" y="98" width="8" height="8" rx="1.5" fill="#0284C7" />
+</svg>

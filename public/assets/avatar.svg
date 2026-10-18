@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="78" fill="#F8F9FA" stroke="#171717" stroke-width="3"/>
+
+  <!-- Neck -->
+  <rect x="70" y="115" width="20" height="25" rx="4" fill="#FDE2CD"/>
+
+  <!-- Shoulders / Clothes -->
+  <path d="M30 156 C30 130, 60 128, 80 128 C100 128, 130 130, 130 156 Z" fill="#171717"/>
+
+  <!-- Head Base -->
+  <ellipse cx="80" cy="82" rx="40" ry="46" fill="#FDE2CD"/>
+
+  <!-- Ears -->
+  <circle cx="39" cy="84" r="10" fill="#FDE2CD" stroke="#171717" stroke-width="2"/>
+  <circle cx="121" cy="84" r="10" fill="#FDE2CD" stroke="#171717" stroke-width="2"/>
+
+  <!-- Glasses -->
+  <!-- Left Lens -->
+  <circle cx="62" cy="83" r="16" fill="white" stroke="#171717" stroke-width="4.5"/>
+  <circle cx="62" cy="83" r="5" fill="#171717"/>
+  <circle cx="64" cy="81" r="1.8" fill="white"/>
+
+  <!-- Right Lens -->
+  <circle cx="98" cy="83" r="16" fill="white" stroke="#171717" stroke-width="4.5"/>
+  <circle cx="98" cy="83" r="5" fill="#171717"/>
+  <circle cx="100" cy="81" r="1.8" fill="white"/>
+
+  <!-- Bridge & Temples -->
+  <path d="M78 82 L82 82" stroke="#171717" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M46 80 L38 78" stroke="#171717" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M114 80 L122 78" stroke="#171717" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M78 94 C79 97, 81 97, 82 94" fill="none" stroke="#171717" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Smile -->
+  <path d="M72 106 Q80 112 88 106" fill="none" stroke="#171717" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Cheeks -->
+  <circle cx="50" cy="98" r="6" fill="#FF8A80" opacity="0.4"/>
+  <circle cx="110" cy="98" r="6" fill="#FF8A80" opacity="0.4"/>
+
+  <!-- Hair -->
+  <!-- Back / Top Volume -->
+  <path d="M38 70 C34 38, 54 22, 80 22 C106 22, 126 38, 122 70 C124 54, 114 34, 80 34 C46 34, 36 54, 38 70 Z" fill="#171717"/>
+  <!-- Front Bangs / Fringe -->
+  <path d="M38 65 C45 42, 65 40, 75 52 C82 38, 105 40, 122 65 C116 50, 102 46, 92 56 C85 46, 68 46, 56 60 C50 56, 42 60, 38 65 Z" fill="#171717"/>
+  <path d="M40 76 C40 68, 48 58, 54 64 C48 72, 44 80, 42 84 Z" fill="#171717"/>
+  <path d="M120 76 C120 68, 112 58, 106 64 C112 72, 116 80, 118 84 Z" fill="#171717"/>
+</svg>

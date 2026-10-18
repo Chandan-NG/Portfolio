@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-nunito: 'Nunito', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
+
+    --canvas: #ffffff;
+    --surface-soft: #fafafa;
+    --surface-dark: #171717;
+    --hairline: #e5e5e5;
+    --hairline-strong: #d4d4d4;
+    --ink: #000000;
+    --ink-deep: #090909;
+    --charcoal: #525252;
+    --body: #737373;
+    --mute: #a3a3a3;
+    --on-dark: #ffffff;
+    --on-dark-mute: rgba(255, 255, 255, 0.7);
+    --primary: #000000;
+    --on-primary: #ffffff;
+    --focus-ring: rgba(59, 130, 246, 0.5);
+
+    --terminal-red: #ff5f56;
+    --terminal-yellow: #ffbd2e;
+    --terminal-green: #27c93f;
+  }
+
+  .dark {
+    --canvas: #0c0c0c;
+    --surface-soft: #171717;
+    --surface-dark: #f5f5f5;
+    --hairline: #262626;
+    --hairline-strong: #383838;
+    --ink: #f5f5f5;
+    --ink-deep: #ffffff;
+    --charcoal: #a3a3a3;
+    --body: #9e9e9e;
+    --mute: #737373;
+    --on-dark: #000000;
+    --on-dark-mute: rgba(0, 0, 0, 0.7);
+    --primary: #ffffff;
+    --on-primary: #000000;
+    --focus-ring: rgba(96, 165, 250, 0.5);
+
+    --terminal-red: #ff5f56;
+    --terminal-yellow: #ffbd2e;
+    --terminal-green: #27c93f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--body);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.18) 1.1px, transparent 1.1px);
+  background-size: 24px 24px;
+}
+
+.dark body {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.18) 1.1px, transparent 1.1px);
+  background-size: 24px 24px;
+}
+
+/* Rounded display typography for headings - matches SF Pro Rounded / Nunito */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-nunito), var(--font-inter), system-ui, sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+
+/* Monospace font for code, install snippet, terminal */
+code, pre, .font-mono {
+  font-family: var(--font-mono), ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Custom selection */
+::selection {
+  background-color: var(--ink);
+  color: var(--canvas);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Marquee infinite scroll animations */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+

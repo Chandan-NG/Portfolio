@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- PyMuPDF Official Logo (Artifex / MuPDF) -->
+  <defs>
+    <linearGradient id="pymupdf-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+    <linearGradient id="pymupdf-fold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991B1B" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </linearGradient>
+  </defs>
+
+  <!-- Document Body -->
+  <path d="M26 14 H78 L104 40 V110 A6 6 0 0 1 98 116 H26 A6 6 0 0 1 20 110 V20 A6 6 0 0 1 26 14 Z" fill="url(#pymupdf-red)" />
+  
+  <!-- Corner Fold -->
+  <path d="M78 14 V38 A2 2 0 0 0 80 40 H104 Z" fill="url(#pymupdf-fold)" />
+
+  <!-- Greek "µ" (Mu) Symbol -->
+  <path d="M44 58 V82 A6 6 0 0 0 56 82 V58 M56 82 V92" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- PDF Pill Badge -->
+  <rect x="68" y="66" width="30" height="18" rx="4" fill="#FFFFFF" />
+  <text x="83" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="11" fill="#B91C1C">PDF</text>
+</svg>

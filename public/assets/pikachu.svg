@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Lightning Tail -->
+  <path d="M22 68 L10 52 L20 48 L12 30 L32 40 L26 46 L38 52 Z" fill="#F4B400" stroke="#795548" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M10 52 L12 30 L22 35 L16 48 Z" fill="#8D6E63"/>
+
+  <!-- Body -->
+  <ellipse cx="50" cy="66" rx="28" ry="24" fill="#FFDE00" stroke="#333" stroke-width="2"/>
+
+  <!-- Feet -->
+  <ellipse cx="34" cy="88" rx="8" ry="4" fill="#FFDE00" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="66" cy="88" rx="8" ry="4" fill="#FFDE00" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Back Stripes -->
+  <path d="M30 56 Q50 54 70 56 Q50 62 30 56" fill="#795548"/>
+  <path d="M34 68 Q50 66 66 68 Q50 74 34 68" fill="#795548"/>
+
+  <!-- Left Ear -->
+  <g transform="rotate(-25 32 30)">
+    <path d="M28 32 C26 15, 30 2, 34 0 C38 2, 42 15, 40 32 Z" fill="#FFDE00" stroke="#333" stroke-width="1.5"/>
+    <path d="M31 10 C30 5, 34 0, 34 0 C38 2, 39 5, 38 10 Z" fill="#212121"/>
+  </g>
+
+  <!-- Right Ear -->
+  <g transform="rotate(25 68 30)">
+    <path d="M60 32 C58 15, 62 2, 66 0 C70 2, 74 15, 72 32 Z" fill="#FFDE00" stroke="#333" stroke-width="1.5"/>
+    <path d="M63 10 C62 5, 66 0, 66 0 C70 2, 71 5, 70 10 Z" fill="#212121"/>
+  </g>
+
+  <!-- Head -->
+  <circle cx="50" cy="46" r="24" fill="#FFDE00" stroke="#333" stroke-width="2"/>
+
+  <!-- Eyes -->
+  <circle cx="41" cy="42" r="4" fill="#212121"/>
+  <circle cx="42.5" cy="40.5" r="1.5" fill="#FFFFFF"/>
+  
+  <circle cx="59" cy="42" r="4" fill="#212121"/>
+  <circle cx="60.5" cy="40.5" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <polygon points="50,47 48.5,49 51.5,49" fill="#212121"/>
+
+  <!-- Mouth -->
+  <path d="M46 52 Q50 55 54 52" fill="none" stroke="#212121" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Rosy Cheeks -->
+  <circle cx="33" cy="50" r="5" fill="#FF3B30"/>
+  <circle cx="67" cy="50" r="5" fill="#FF3B30"/>
+
+  <!-- Hands / Paws -->
+  <ellipse cx="40" cy="62" rx="4" ry="6" fill="#FFDE00" stroke="#333" stroke-width="1.5" transform="rotate(-15 40 62)"/>
+  <ellipse cx="60" cy="62" rx="4" ry="6" fill="#FFDE00" stroke="#333" stroke-width="1.5" transform="rotate(15 60 62)"/>
+</svg>

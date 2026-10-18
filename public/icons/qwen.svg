@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Qwen LLM Official Alibaba Model Logo -->
+  <defs>
+    <linearGradient id="qwen-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+    <linearGradient id="qwen-grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#9333EA" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Isometric Hex Ribbon -->
+  <path d="M64 16 L104 38 L104 88 L64 112 L24 88 L24 38 Z" stroke="url(#qwen-grad1)" stroke-width="14" stroke-linejoin="round" fill="none" />
+  
+  <!-- Inner Ring & Focus Core -->
+  <circle cx="64" cy="63" r="16" fill="url(#qwen-grad2)" />
+  
+  <!-- "Q" diagonal tail accent -->
+  <path d="M75 74 L98 97" stroke="url(#qwen-grad1)" stroke-width="12" stroke-linecap="round" />
+</svg>

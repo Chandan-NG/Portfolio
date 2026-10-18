@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Official LlamaIndex Origami Llama -->
+  <defs>
+    <linearGradient id="llama-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#5B21B6" />
+    </linearGradient>
+    <linearGradient id="llama-neck" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="llama-ears" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C4B5FD" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="llama-legs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#2E1065" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Ear -->
+  <polygon points="50,14 60,6 66,20 58,26" fill="url(#llama-ears)" />
+  <!-- Right Ear -->
+  <polygon points="60,6 74,16 66,20" fill="#DDD6FE" />
+  
+  <!-- Head & Snout -->
+  <polygon points="50,14 58,26 44,40 36,28" fill="url(#llama-neck)" />
+  <polygon points="58,26 70,36 44,40" fill="#9333EA" />
+
+  <!-- Long Neck -->
+  <polygon points="44,40 70,36 80,56 56,60" fill="url(#llama-body)" />
+  <polygon points="70,36 96,44 80,56" fill="#A855F7" />
+
+  <!-- Upper Body & Back -->
+  <polygon points="80,56 96,44 104,60 88,66" fill="#7E22CE" />
+  <polygon points="56,60 80,56 78,86 52,82" fill="url(#llama-body)" />
+  <polygon points="80,56 88,66 86,88 78,86" fill="#6B21A8" />
+
+  <!-- Legs -->
+  <polygon points="52,82 58,114 48,114 44,82" fill="url(#llama-legs)" />
+  <polygon points="78,86 84,114 74,114 70,86" fill="url(#llama-legs)" />
+</svg>

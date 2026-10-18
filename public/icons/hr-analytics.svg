@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- HR Workforce Analytics Intelligence Emblem -->
+  <defs>
+    <linearGradient id="hr-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="#3B82F6" opacity="0.1" />
+
+  <!-- People Silhouette (Lead) -->
+  <circle cx="48" cy="42" r="16" fill="url(#hr-grad)" />
+  <path d="M22 96 C22 76 34 70 48 70 C62 70 74 76 74 96" fill="url(#hr-grad)" />
+
+  <!-- Workforce Growth & Analytics Metrics -->
+  <rect x="76" y="66" width="10" height="30" rx="3" fill="#60A5FA" />
+  <rect x="90" y="52" width="10" height="44" rx="3" fill="#3B82F6" />
+  <rect x="104" y="36" width="10" height="60" rx="3" fill="#10B981" />
+
+  <!-- Trending Arrow -->
+  <polyline points="76 56 94 40 109 26" stroke="#10B981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <polyline points="99 26 109 26 109 36" stroke="#10B981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
